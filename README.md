@@ -1,6 +1,6 @@
-# SEO Rank Tracker
+# Rank Pilot
 
-A full-stack SEO toolkit that lets you **audit any website with AI** and **track Google keyword rankings over time**. Enter a URL to get a complete SEO report (scores, keyword density, prioritized issues with recommendations), or add keywords to monitor where your domain ranks on Google — refreshed automatically every day.
+**Rank Pilot** is a full-stack SEO toolkit that lets you **audit any website with AI** and **track Google keyword rankings over time**. Enter a URL to get a complete SEO report (scores, keyword density, prioritized issues with recommendations), or add keywords to monitor where your domain ranks on Google — refreshed automatically every day.
 
 ## Features
 
@@ -23,7 +23,7 @@ A full-stack SEO toolkit that lets you **audit any website with AI** and **track
 ## Project Structure
 
 ```
-SEO_rank_tracker/
+rank-pilot/
 ├── client/                  # React + Vite frontend
 │   └── src/
 │       ├── pages/           # Home, Login, Dashboard, Analyze, Report, History,
@@ -55,7 +55,7 @@ SEO_rank_tracker/
 
 ```bash
 git clone <repo-url>
-cd SEO_rank_tracker
+cd rank-pilot
 
 # Backend
 cd server && npm install
