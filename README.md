@@ -77,7 +77,7 @@ cp client/.env.example client/.env
 
 | Variable | Description |
 |---|---|
-| `PORT` | Server port (default `5000`) |
+| `PORT` | Server port (default `5000`; on macOS disable AirPlay Receiver, which also uses port 5000) |
 | `MONGODB_URI` | MongoDB connection string |
 | `JWT_SECRET` | Secret for signing auth tokens |
 | `OPENAI_API_KEY` | OpenAI key for AI SEO analysis |
