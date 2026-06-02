@@ -1,12 +1,10 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { useTheme } from "../context/ThemeContext";
-import { Search, BarChart3, History, LogOut, Menu, X, Target, Sun, Moon, ChartNoAxesColumnIcon } from "lucide-react";
+import { Search, BarChart3, History, LogOut, Menu, X, Target, ChartNoAxesColumnIcon } from "lucide-react";
 import { useState } from "react";
 import { useApp } from "../context/AppContext";
 
 export default function Navbar() {
     const { user, logout } = useApp();
-    const { theme, setTheme } = useTheme();
     const navigate = useNavigate();
     const location = useLocation();
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -49,10 +47,6 @@ export default function Navbar() {
 
                     {/* Right side */}
                     <div className="hidden md:flex items-center gap-3">
-                        <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className="p-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-full transition-colors flex items-center justify-center" aria-label="Toggle theme">
-                            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-                        </button>
-
                         {user ? (
                             <>
                                 <div className="flex items-center gap-2 px-2 py-1.5 rounded-full border border-border bg-card text-sm">
@@ -81,9 +75,6 @@ export default function Navbar() {
 
                     {/* Mobile toggle container */}
                     <div className="flex items-center gap-2 md:hidden">
-                        <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className="p-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-full transition-colors">
-                            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-                        </button>
                         <button className="text-muted-foreground hover:text-foreground p-2" onClick={() => setMobileOpen(!mobileOpen)}>
                             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>

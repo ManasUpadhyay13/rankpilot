@@ -12,9 +12,9 @@ export default function ScoreGauge({ score, size = 140, strokeWidth = 10, label 
     const offset = circumference - progress;
 
     const getColor = (s: number) => {
-        if (s >= 80) return "#10b981";
-        if (s >= 50) return "#f59e0b";
-        return "#ef4444";
+        if (s >= 80) return "var(--success)";
+        if (s >= 50) return "var(--warning)";
+        return "var(--danger)";
     };
 
     const color = getColor(score);

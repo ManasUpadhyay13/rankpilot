@@ -135,14 +135,14 @@ export default function RankTracker() {
 
     const getPositionBadge = (pos: number | null) => {
         if (pos === null) return { text: "Not Ranked", class: "text-muted-foreground bg-muted/50" };
-        if (pos <= 3) return { text: `#${pos}`, class: "text-emerald-400 bg-emerald-500/15 border border-emerald-500/30" };
-        if (pos <= 10) return { text: `#${pos}`, class: "text-primary bg-primary/15 border border-primary/30" };
-        if (pos <= 20) return { text: `#${pos}`, class: "text-accent bg-accent/15 border border-accent/30" };
-        return { text: `#${pos}`, class: "text-danger bg-danger/15 border border-danger/30" };
+        if (pos <= 3) return { text: `#${pos}`, class: "text-success bg-success/10 border border-success/20" };
+        if (pos <= 10) return { text: `#${pos}`, class: "text-accent bg-accent/8 border border-accent/20" };
+        if (pos <= 20) return { text: `#${pos}`, class: "text-warning bg-warning/10 border border-warning/20" };
+        return { text: `#${pos}`, class: "text-danger bg-danger/10 border border-danger/20" };
     };
 
     const getChangeIndicator = (change: number) => {
-        if (change > 0) return { icon: <TrendingUp size={14} />, text: `+${change}`, class: "text-emerald-500" };
+        if (change > 0) return { icon: <TrendingUp size={14} />, text: `+${change}`, class: "text-success" };
         if (change < 0) return { icon: <TrendingDown size={14} />, text: `${change}`, class: "text-danger" };
         return { icon: <Minus size={14} />, text: "0", class: "text-muted-foreground" };
     };

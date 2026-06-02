@@ -141,14 +141,14 @@ export default function RankDetail() {
             // Labels (inverted: top = lowest position number)
             const posVal = Math.round(minPos + ((maxPos - minPos) / gridLines) * i);
             ctx.fillStyle = textColor;
-            ctx.font = "11px Outfit";
+            ctx.font = '11px "Hanken Grotesk"';
             ctx.textAlign = "right";
             ctx.fillText(`#${posVal}`, padding.left - 8, y + 4);
         }
 
         // Draw date labels
         ctx.fillStyle = textColor;
-        ctx.font = "10px Outfit";
+        ctx.font = '10px "Hanken Grotesk"';
         ctx.textAlign = "center";
         const maxLabels = Math.min(history.length, 7);
         const labelStep = Math.max(1, Math.floor(history.length / maxLabels));
@@ -216,23 +216,23 @@ export default function RankDetail() {
         ctx.translate(12, h / 2);
         ctx.rotate(-Math.PI / 2);
         ctx.fillStyle = textColor;
-        ctx.font = "11px Outfit";
+        ctx.font = '11px "Hanken Grotesk"';
         ctx.textAlign = "center";
         ctx.fillText("Position", 0, 0);
         ctx.restore();
     };
 
     const getChangeIndicator = (change: number) => {
-        if (change > 0) return { icon: <TrendingUp size={16} />, text: `+${change}`, class: "text-emerald-500" };
+        if (change > 0) return { icon: <TrendingUp size={16} />, text: `+${change}`, class: "text-success" };
         if (change < 0) return { icon: <TrendingDown size={16} />, text: `${change}`, class: "text-danger" };
         return { icon: <Minus size={16} />, text: "—", class: "text-muted-foreground" };
     };
 
     const getPositionColor = (pos: number | null) => {
         if (pos === null) return "text-muted-foreground";
-        if (pos <= 3) return "text-emerald-500";
-        if (pos <= 10) return "text-primary";
-        if (pos <= 20) return "text-accent";
+        if (pos <= 3) return "text-success";
+        if (pos <= 10) return "text-accent";
+        if (pos <= 20) return "text-warning";
         return "text-danger";
     };
 
@@ -400,7 +400,7 @@ export default function RankDetail() {
                                             <div key={i} className="glass rounded-xl p-4 flex items-start gap-4">
                                                 <div
                                                     className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shrink-0 ${
-                                                        i === 0 ? "bg-amber-500/15 text-amber-400 border border-amber-500/30" : i === 1 ? "bg-gray-400/15 text-gray-300 border border-gray-400/30" : "bg-orange-500/15 text-orange-400 border border-orange-500/30"
+                                                        i === 0 ? "bg-warning/10 text-warning border border-warning/25" : i === 1 ? "bg-muted text-muted-foreground border border-border" : "bg-orange-600/10 text-orange-700 border border-orange-600/25"
                                                     }`}
                                                 >
                                                     #{comp.position}
@@ -433,7 +433,7 @@ export default function RankDetail() {
                                             <div className="flex items-start gap-4">
                                                 <div
                                                     className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold shrink-0 ${
-                                                        comp.position <= 3 ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30" : comp.position <= 10 ? "bg-primary/15 text-primary border border-primary/30" : "bg-accent/15 text-accent border border-accent/30"
+                                                        comp.position <= 3 ? "bg-success/10 text-success border border-success/20" : comp.position <= 10 ? "bg-accent/8 text-accent border border-accent/20" : "bg-muted text-muted-foreground border border-border"
                                                     }`}
                                                 >
                                                     #{comp.position}
@@ -476,12 +476,12 @@ export default function RankDetail() {
                                                         entry.position === null
                                                             ? "bg-muted text-muted-foreground border border-border"
                                                             : entry.position <= 3
-                                                              ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30"
+                                                              ? "bg-success/10 text-success border border-success/20"
                                                               : entry.position <= 10
-                                                                ? "bg-primary/15 text-primary border border-primary/30"
+                                                                ? "bg-accent/8 text-accent border border-accent/20"
                                                                 : entry.position <= 20
-                                                                  ? "bg-accent/15 text-accent border border-accent/30"
-                                                                  : "bg-danger/15 text-danger border border-danger/30"
+                                                                  ? "bg-warning/10 text-warning border border-warning/25"
+                                                                  : "bg-danger/10 text-danger border border-danger/20"
                                                     }`}
                                                 >
                                                     {entry.position ? `#${entry.position}` : "—"}

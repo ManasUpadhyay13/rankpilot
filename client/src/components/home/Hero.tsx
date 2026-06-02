@@ -14,14 +14,7 @@ export default function Hero() {
 
     return (
         <section className="max-w-2xl mx-auto px-4 py-40 sm:py-44 min-h-screen text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/2 rounded-full text-xs text-primary mb-6 border border-primary/10">
-                <div className="relative flex items-center justify-center">
-                    <div className="absolute bg-blue-600 size-2 rounded-full animate-ping"></div>
-                    <div className="bg-blue-600 size-1.5 rounded-full"></div>
-                </div>
-                Powered by BrowserBase & Gemini AI
-            </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium leading-tight mb-6 text-foreground">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight mb-6 text-foreground">
                 Analyze & Boost Your <span className="gradient-text dm-serif">SEO Rankings</span>
             </h1>
             <p className="text-sm  text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">Get instant AI-powered SEO audits for any website. Uncover hidden issues, optimize performance, and outrank your competition.</p>
