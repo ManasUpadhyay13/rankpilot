@@ -14,9 +14,9 @@ export default function Features() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7">
                     {homeFeaturesData.map((f: any) => (
-                        <div key={f.title} className="bg-card border border-border rounded-2xl p-6 hover:bg-muted/30 backdrop-blur transition-all group">
-                            <div className="text-primary mb-4 group-hover:translate-y-1 transition-transform duration-300 inline-block">{f.icon}</div>
-                            <h3 className="text-lg font-medium mb-2 text-foreground">{f.title}</h3>
+                        <div key={f.title} className="bg-card border border-border rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+                            <div className="size-12 rounded-xl bg-accent-soft text-primary flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300">{f.icon}</div>
+                            <h3 className="text-lg font-semibold mb-2 text-foreground">{f.title}</h3>
                             <p className="w-5/6 text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
                         </div>
                     ))}

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..800;1,300..800&family=Instrument+Serif:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -23,35 +23,34 @@
     --color-glass-bg: var(--glass-bg);
     --color-glass-border: var(--glass-border);
 
-    --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
-    --font-display: "Instrument Serif", Georgia, serif;
+    --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
-    /* Paper & Cobalt — light, minimal, editorial */
-    --background: #faf9f7;
-    --foreground: #181a1f;
+    /* Trusted SaaS Blue — clean, friendly, data-driven (light only) */
+    --background: #f7f9fc;
+    --foreground: #0e2a47;
     --card: #ffffff;
-    --border: #e9e7e2;
-    --muted: #f2f0ec;
-    --muted-foreground: #74716b;
+    --border: #e2e8f0;
+    --muted: #edf2f7;
+    --muted-foreground: #5b7186;
 
-    --primary: #181a1f;
-    --primary-dark: #000000;
-    --primary-foreground: #faf9f7;
-    --accent: #1652f0;
-    --accent-soft: #eef2fe;
+    --primary: #1d7df0;
+    --primary-dark: #1564cc;
+    --primary-foreground: #ffffff;
+    --accent: #1d7df0;
+    --accent-soft: #e8f1fe;
 
-    --success: #08875d;
-    --warning: #d97706;
-    --danger: #dc2626;
+    --success: #16a672;
+    --warning: #f59e0b;
+    --danger: #ef4444;
 
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    --glass-border: rgba(24, 26, 31, 0.06);
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(14, 42, 71, 0.06);
 
-    --scroll-track: #f2f0ec;
-    --scroll-thumb: #d8d5cf;
-    --scroll-thumb-hover: #b7b3ab;
+    --scroll-track: #edf2f7;
+    --scroll-thumb: #cbd7e3;
+    --scroll-thumb-hover: #a7b9c9;
 }
 
 html {
@@ -59,7 +58,7 @@ html {
 }
 
 body {
-    font-family: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
     background-color: var(--background);
     color: var(--foreground);
     -webkit-font-smoothing: antialiased;
@@ -71,32 +70,42 @@ button {
 }
 
 ::selection {
-    background: var(--accent);
+    background: var(--primary);
     color: #ffffff;
 }
 
 :focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--primary);
     outline-offset: 2px;
 }
 
-/* Display accent — italic serif, used for highlighted words in headings */
+/* Form fields sit inside styled containers — no raw outline ring */
+input:focus-visible,
+input:focus,
+textarea:focus-visible,
+textarea:focus,
+select:focus-visible,
+select:focus {
+    outline: none;
+}
+
+/* Display accent — bold, same family, used for highlighted words in headings */
 .dm-serif {
-    font-family: "Instrument Serif", Georgia, serif;
-    font-style: italic;
-    font-weight: 400;
-    letter-spacing: -0.01em;
+    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: -0.02em;
 }
 
 .outfit {
-    font-family: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 .glass {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 1rem;
-    box-shadow: 0 1px 2px rgba(24, 26, 31, 0.04), 0 12px 32px -16px rgba(24, 26, 31, 0.1);
+    box-shadow: 0 1px 2px rgba(14, 42, 71, 0.04), 0 12px 32px -16px rgba(14, 42, 71, 0.12);
 }
 
 .glass-strong {
@@ -108,25 +117,115 @@ button {
 
 /* gradients */
 .gradient-text {
-    background: linear-gradient(120deg, var(--accent), #0d3bb8);
+    background: linear-gradient(110deg, #1d7df0, #38bdf8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .gradient-bg {
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+/* Atmosphere */
+.bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(14, 42, 71, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(14, 42, 71, 0.05) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+}
+
+.hero-glow {
+    background:
+        radial-gradient(ellipse 50% 40% at 50% 8%, rgba(29, 125, 240, 0.13), transparent 70%),
+        radial-gradient(ellipse 30% 30% at 82% 30%, rgba(56, 189, 248, 0.1), transparent 70%),
+        radial-gradient(ellipse 30% 30% at 14% 42%, rgba(29, 125, 240, 0.07), transparent 70%);
 }
 
 /* Animations */
 
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.reveal-d1 {
+    animation-delay: 0.08s;
+}
+.reveal-d2 {
+    animation-delay: 0.18s;
+}
+.reveal-d3 {
+    animation-delay: 0.28s;
+}
+.reveal-d4 {
+    animation-delay: 0.38s;
+}
+.reveal-d5 {
+    animation-delay: 0.5s;
+}
+.reveal-d6 {
+    animation-delay: 0.65s;
+}
+
+@keyframes float-y {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-0.5deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(0.5deg);
+    }
+}
+
+.animate-float {
+    animation: float-y 7s ease-in-out infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 30s linear infinite;
+}
+
+@keyframes bar-grow {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.animate-bar {
+    transform-origin: left;
+    animation: bar-grow 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+}
+
 @keyframes pulse-glow {
     0%,
     100% {
-        box-shadow: 0 1px 2px rgba(24, 26, 31, 0.04), 0 0 0 0 rgba(22, 82, 240, 0);
+        box-shadow: 0 1px 2px rgba(14, 42, 71, 0.04), 0 0 0 0 rgba(29, 125, 240, 0);
     }
     50% {
-        box-shadow: 0 1px 2px rgba(24, 26, 31, 0.04), 0 0 0 6px rgba(22, 82, 240, 0.06), 0 8px 32px -8px rgba(22, 82, 240, 0.25);
+        box-shadow: 0 1px 2px rgba(14, 42, 71, 0.04), 0 0 0 6px rgba(29, 125, 240, 0.07), 0 8px 32px -8px rgba(29, 125, 240, 0.3);
     }
 }
 
@@ -179,40 +278,40 @@ button {
 }
 
 .score-bg-good {
-    background-color: rgba(8, 135, 93, 0.08);
-    border-color: rgba(8, 135, 93, 0.2);
+    background-color: rgba(22, 166, 114, 0.08);
+    border-color: rgba(22, 166, 114, 0.2);
     border-width: 1px;
 }
 .score-bg-medium {
-    background-color: rgba(217, 119, 6, 0.08);
-    border-color: rgba(217, 119, 6, 0.2);
+    background-color: rgba(245, 158, 11, 0.08);
+    border-color: rgba(245, 158, 11, 0.2);
     border-width: 1px;
 }
 .score-bg-poor {
-    background-color: rgba(220, 38, 38, 0.08);
-    border-color: rgba(220, 38, 38, 0.2);
+    background-color: rgba(239, 68, 68, 0.08);
+    border-color: rgba(239, 68, 68, 0.2);
     border-width: 1px;
 }
 
 .severity-critical {
-    background: rgba(220, 38, 38, 0.08);
+    background: rgba(239, 68, 68, 0.08);
     color: var(--danger);
-    border: 1px solid rgba(220, 38, 38, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.2);
 }
 .severity-warning {
-    background: rgba(217, 119, 6, 0.08);
+    background: rgba(245, 158, 11, 0.08);
     color: var(--warning);
-    border: 1px solid rgba(217, 119, 6, 0.2);
+    border: 1px solid rgba(245, 158, 11, 0.2);
 }
 .severity-info {
-    background: rgba(22, 82, 240, 0.07);
+    background: rgba(29, 125, 240, 0.07);
     color: var(--accent);
-    border: 1px solid rgba(22, 82, 240, 0.18);
+    border: 1px solid rgba(29, 125, 240, 0.18);
 }
 
 /* Background Patterns */
 .bg-dot-pattern {
-    background-image: radial-gradient(rgba(24, 26, 31, 0.16) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(14, 42, 71, 0.16) 1px, transparent 1px);
     background-size: 24px 24px;
 }
 

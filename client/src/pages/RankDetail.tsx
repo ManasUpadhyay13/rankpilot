@@ -141,14 +141,14 @@ export default function RankDetail() {
             // Labels (inverted: top = lowest position number)
             const posVal = Math.round(minPos + ((maxPos - minPos) / gridLines) * i);
             ctx.fillStyle = textColor;
-            ctx.font = '11px "Hanken Grotesk"';
+            ctx.font = '11px "Plus Jakarta Sans"';
             ctx.textAlign = "right";
             ctx.fillText(`#${posVal}`, padding.left - 8, y + 4);
         }
 
         // Draw date labels
         ctx.fillStyle = textColor;
-        ctx.font = '10px "Hanken Grotesk"';
+        ctx.font = '10px "Plus Jakarta Sans"';
         ctx.textAlign = "center";
         const maxLabels = Math.min(history.length, 7);
         const labelStep = Math.max(1, Math.floor(history.length / maxLabels));
@@ -216,7 +216,7 @@ export default function RankDetail() {
         ctx.translate(12, h / 2);
         ctx.rotate(-Math.PI / 2);
         ctx.fillStyle = textColor;
-        ctx.font = '11px "Hanken Grotesk"';
+        ctx.font = '11px "Plus Jakarta Sans"';
         ctx.textAlign = "center";
         ctx.fillText("Position", 0, 0);
         ctx.restore();
