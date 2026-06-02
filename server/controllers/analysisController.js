@@ -1,5 +1,5 @@
 import Analysis from "../models/Analysis.js";
-import { analyzeSeoData } from "../services/geminiService.js";
+import { analyzeSeoData } from "../services/openaiService.js";
 import { scrapeUrl } from "../services/scraperService.js";
 
 // Analyze a URL
@@ -34,7 +34,7 @@ export const analyzeUrl = async (req, res) => {
                 return;
             }
 
-            // Step 2: Analyze with Gemini AI
+            // Step 2: Analyze with OpenAI
             const aiResult = await analyzeSeoData(scrapeResult.data);
 
             if (!aiResult.success) {

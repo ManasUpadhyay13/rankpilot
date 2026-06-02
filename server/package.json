@@ -13,7 +13,6 @@
     "type": "module",
     "dependencies": {
         "@browserbasehq/sdk": "^2.11.0",
-        "@google/genai": "^2.2.0",
         "bcrypt": "^6.0.0",
         "cors": "^2.8.6",
         "dotenv": "^17.4.2",
@@ -21,6 +20,7 @@
         "jsonwebtoken": "^9.0.3",
         "mongoose": "^9.6.2",
         "node-cron": "^4.2.1",
+        "openai": "^6.41.0",
         "playwright-core": "^1.60.0"
     },
     "devDependencies": {
